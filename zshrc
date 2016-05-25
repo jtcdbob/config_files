@@ -50,7 +50,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin"
+export PATH="/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin:/Library/TeX/texbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -100,8 +100,16 @@ export CLICOLOR=1
 zstyle ':completion:*:default' list-colors ''
 
 export DESK=$HOME/Desktop
+export BLOG=$HOME/Dropbox/myBlog/blog
 
-export TOTIENT='kc853@en-cs-totient-01.coecis.cornell.edu'
+# export TOTIENT='kc853@en-cs-totient-01.coecis.cornell.edu'
+export JAVA_HOME=$(/usr/libexec/java_home)
+export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.7.5.1
+export HADOOP_HOME=~/Dropbox/Homework/Homework_Spring_2016/CS5300/hadoop-2.7.2
+export PATH=$PATH:$EC2_HOME/bin 
+export AWS_ACCESS_KEY=AKIAJGBJXY5XVGV56MKQ
+export AWS_SECRET_KEY=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
+# export LSI=~/Dropbox/Homework/Homework_Spring_2016/CS5300/
 # GCC Version Setting (instead of using native Clang from Apple due to lack of OpenMP).
 export CC=/usr/local/bin/gcc
 export CXX=/usr/local/bin/g++
@@ -116,3 +124,8 @@ alias cc=/usr/local/bin/gcc
 
 # To reload the .zshrc command
 alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# For Ruby
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
